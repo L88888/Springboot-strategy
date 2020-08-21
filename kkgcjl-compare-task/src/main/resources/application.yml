@@ -1,0 +1,24 @@
+##数据源配置##
+spring:
+  datasource:
+    mobile:
+      type: com.zaxxer.hikari.HikariDataSource
+      jdbc-url: jdbc:oracle:thin:@10.162.121.109:1521/orclbd
+      username: mobile
+      password: slmobile
+    clyp:
+      type: com.zaxxer.hikari.HikariDataSource
+      jdbc-url: jdbc:oracle:thin:@10.162.121.109:1521/orclbd
+      username: clyp
+      password: slclyp
+#不知道为啥 下面配置不生效
+#      hikari:
+#        minimum-idle: 5
+#        idle-timeout: 600000
+#        maximum-pool-size: 10
+#        auto-commit: true
+#        pool-name: ${spring.application.name}-hikaridatasource
+#        max-lifetime: 1800000
+#        connection-timeout: 30000
+#        connection-test-query: select 1 from dual
+  

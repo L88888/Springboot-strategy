@@ -1,0 +1,28 @@
+server:
+  port: 2037
+#配置consul信息
+spring:
+  application:
+    name: server-device-sync
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      enabled: true
+      discovery:
+        enabled: true
+        register: false
+        #本地测试时将下面的配置打开，部署时请注释掉
+#        serviceName: server-device-sync
+#        instanceId: server-device-sync
+#        healthCheckUrl: http://本地IP:PORT/sys/Serf/Health/Status/Check
+#        ipAddress: 本地IP
+#        preferIpAddress: true
+#        tags: '本地测试正式发布时删除。'
+      config:
+        enabled: true   #默认是true --
+        format: PROPERTIES    # 表示consul上面文件的格式 有四种 YAML PROPERTIES KEY-VALUE FILES
+        data-key: configuration  #表示consul上面的KEY值(或者说文件的名字) 默认是data
+        watch:
+          enabled: false #启用Config Watch集合
+          delay: 10000 #配置观察调用频率为10s,默认值为1000，以毫秒为单位。

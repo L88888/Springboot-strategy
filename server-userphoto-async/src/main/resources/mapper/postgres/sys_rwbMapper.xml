@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sailing.di.sysservice.postgres.mapper.SysrwbMapper" >
+
+    <update id="updateRwzhgxsj" parameterType="java.util.Map">
+        UPDATE sys_bi_rwb
+          SET tjsj = #{tjsj}
+        WHERE lsh = #{lsh}
+    </update>
+
+    <select id="queryRwlb" resultType="java.util.Map">
+        SELECT
+          lsh,
+          rwbm,
+          rwmc,
+          tjsj
+        FROM sys_bi_rwb
+        WHERE RWBM = 'da_grjbxx_zp'
+    </select>
+
+</mapper>
