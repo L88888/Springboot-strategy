@@ -2,10 +2,7 @@ package com.sailing.dataextraction.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.neo4j.ogm.annotation.GeneratedValue;
-import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.NodeEntity;
-import org.neo4j.ogm.annotation.Property;
+import org.neo4j.ogm.annotation.*;
 
 /**
  * @author Liufei Yang
@@ -17,33 +14,62 @@ import org.neo4j.ogm.annotation.Property;
 @NodeEntity(label = "Population")
 @Data
 @NoArgsConstructor
-public class Population {
+public class Population implements Peers{
+
+
+//    @Id
+//    @Property(name = "uuid")
+//    private String uuid;
+//
+//    @Property(name = "name")
+//    private String name;
+//
+//    @Property(name = "idNumber")
+//    private String idNumber;
+//
+//    @Property(name = "hohRelations")
+//    private String hohRelations;
+//
+//    @Property(name = "hohName")
+//    private String hohName;
+//
+//    @Property(name = "hohIdNumber")
+//    private String hohIdNumber;
+//
+//    @Property(name = "familyNumber")
+//    private String familyNumber;
+//
+//    @Property(name = "homeAddress")
+//    private String homeAddress;
+//
+//    @Property(name = "ssTime")
+//    private Long ssTime;
 
     @Id
-    @GeneratedValue
-    Long id;
-
     @Property(name = "uuid")
     private String uuid;
 
     @Property(name = "name")
-    private String name;
+    private String xm;
 
     @Property(name = "idNumber")
-    private String idNumber;
+    private String gmsfhm;
 
     @Property(name = "hohRelations")
-    private String hohRelations;
+    private String yhzgx;
 
     @Property(name = "hohName")
-    private String hohName;
+    private String hz_xm;
 
     @Property(name = "hohIdNumber")
-    private String hohIdNumber;
+    private String hz_gmsfhm;
 
     @Property(name = "familyNumber")
-    private String familyNumber;
+    private String hh;
 
     @Property(name = "homeAddress")
-    private String homeAddress;
+    private String hjd_dzmc;
+
+    @Property(name = "ssTime")
+    private Long ssTime;
 }

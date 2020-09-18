@@ -17,12 +17,9 @@ import org.neo4j.ogm.annotation.Property;
 @NodeEntity(label = "Internet")
 @Data
 @NoArgsConstructor
-public class Internet {
+public class Internet implements Peers{
 
     @Id
-    @GeneratedValue
-    Long id;
-
     @Property(name = "uuid")
     private String uuid;
 
@@ -46,4 +43,7 @@ public class Internet {
 
     @Property(name = "time")
     private Long time;
+
+    @Property(name = "ssTime")
+    private Long ssTime;
 }

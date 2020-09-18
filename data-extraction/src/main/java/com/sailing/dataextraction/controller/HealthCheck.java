@@ -1,6 +1,6 @@
 package com.sailing.dataextraction.controller;
 
-import com.sailing.dataextraction.task.JobManager;
+import com.sailing.dataextraction.service.DataFileAnalysis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ import java.util.Map;
 public class HealthCheck {
 
     @Autowired
-    private JobManager jobManager;
+    private DataFileAnalysis dataFileAnalysis;
 
     /**
      * 提供应用服务自身的健康检测.
@@ -36,7 +36,7 @@ public class HealthCheck {
      */
     @GetMapping(path = "/startJobTask", produces = MediaType.APPLICATION_JSON_VALUE)
     public Map startJobTask(){
-        jobManager.jobManager();
+        dataFileAnalysis.getFileData();
         Map<String, String> map = new HashMap<>(2);
         map.put("success", "true");
         map.put("message", "OK");

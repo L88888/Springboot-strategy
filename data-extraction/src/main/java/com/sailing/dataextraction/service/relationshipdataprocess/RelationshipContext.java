@@ -31,6 +31,7 @@ public class RelationshipContext {
     /**
      * 通过实现类的枚举key,初始化子类实现类对象
      * @param bussKey 例如住店、网吧、汽车、小旅馆等的同行实现类对象
+     * @param bussData 需要处理的业务数据对象集合
      * @return 返回nep4j存储后的对象信息,返回null则表示存储数据异常
      */
     public Object getRelationshipImpl(String bussKey, Map<String, String> bussData){
@@ -41,5 +42,4 @@ public class RelationshipContext {
         }
         return null;
     }
-
 }

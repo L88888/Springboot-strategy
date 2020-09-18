@@ -1,4 +1,4 @@
-package com.sailing.dataextraction.util;
+package com.sailing.dataextraction.common.util;
 
 import org.apache.commons.codec.binary.Base64;
 

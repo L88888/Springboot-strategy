@@ -2,7 +2,6 @@ package com.sailing.dataextraction.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Property;
@@ -17,12 +16,9 @@ import org.neo4j.ogm.annotation.Property;
 @NodeEntity(label = "Train")
 @Data
 @NoArgsConstructor
-public class Train {
+public class Train implements Peers{
 
     @Id
-    @GeneratedValue
-    Long id;
-
     @Property(name = "uuid")
     private String uuid;
 
@@ -49,4 +45,7 @@ public class Train {
 
     @Property(name = "time")
     private Long time;
+
+    @Property(name = "ssTime")
+    private Long ssTime;
 }

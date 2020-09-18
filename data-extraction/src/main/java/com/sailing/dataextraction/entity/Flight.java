@@ -17,11 +17,9 @@ import org.neo4j.ogm.annotation.Property;
 @NodeEntity(label = "Flight")
 @Data
 @NoArgsConstructor
-public class Flight {
-    @Id
-    @GeneratedValue
-    Long id;
+public class Flight implements Peers{
 
+    @Id
     @Property(name = "uuid")
     private String uuid;
 
@@ -57,4 +55,7 @@ public class Flight {
 
     @Property(name = "time")
     private Long time;
+
+    @Property(name = "ssTime")
+    private Long ssTime;
 }

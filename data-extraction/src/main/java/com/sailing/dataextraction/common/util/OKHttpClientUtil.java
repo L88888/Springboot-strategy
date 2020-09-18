@@ -1,11 +1,10 @@
-package com.sailing.dataextraction.util;
+package com.sailing.dataextraction.common.util;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
